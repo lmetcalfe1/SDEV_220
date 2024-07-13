@@ -8,5 +8,8 @@ response.text
 print(response.text)
 picture = response.json()
 url = picture["hdurl"]
+text = open("NASA_text.txt", "w")
+text.write(picture["explanation"])
+text.close()
 webbrowser.open(url, new=2, autoraise=True)
 # https://realpython.com/python-api/
